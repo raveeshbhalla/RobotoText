@@ -10,24 +10,24 @@ CustomType can be used in two ways:
 ===============
 If you would like to mention your Typeface in the XML file itself, you would need to use the in.raveesh.customtype.TextView object in your XML files in place of android.widget.TextView.
 After that, using a custom typeface in a TextView is as simple as follows (note the custom implementation of a TextView)
-
-    <in.raveesh.customtype.TextView
-            android:text="@string/lorem_ipsum_short"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:typeface="fonts/RobotoCondensed/Light.ttf"
-            android:textSize="@dimen/typesize_headline"
-            android:textColor="@color/text_primary_light"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"/>
-    
+```xml
+<in.raveesh.customtype.TextView
+        android:text="@string/lorem_ipsum_short"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:typeface="fonts/RobotoCondensed/Light.ttf"
+        android:textSize="@dimen/typesize_headline"
+        android:textColor="@color/text_primary_light"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"/>
+```
 What you're looking to do is set app:typeface to the path to the typeface file inside the assets folder.
 
 2. Via JAVA:
 ==============
 The FontManager.getTypeface() method returns a typeface object that you can apply to any view that supports the setTypeface() method. You do not need to use the bundled custom TextView or EditText for this. Example code
-
-    tv.setTypeface(CustomType.getTypeface(this,"folder/typeface.ttf"));
-    
+```java
+tv.setTypeface(CustomType.getTypeface(this,"folder/typeface.ttf"));
+```
 
 Do note: the font file must be present within your projects assets folder.
 
@@ -39,8 +39,9 @@ How to use the library
 =====================
 Add the following line to your build.gradle dependencies
 
-    compile 'in.raveesh:customtype:1.0.0'
-
+```groovy
+compile 'in.raveesh:customtype:1.0.0'
+```
 Apps Using Customtype
 ======================
 * [Haptik](https://play.google.com/store/apps/details?id=co.haptik)
